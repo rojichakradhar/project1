@@ -15,6 +15,8 @@ class _HomepageState extends State<Homepage> {
       body: Padding(
         padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
               child: Row(
@@ -24,11 +26,16 @@ class _HomepageState extends State<Homepage> {
                   Icon(Icons.list, size: 30),
                   SizedBox(width: 70),
                   Text(
-                    'Hello,' + 'XYZ',
+                    'Hello,',
                     style: TextStyle(fontSize: 25),
                   ),
+                  Text('XYZ',
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 0, 115, 255))),
                   SizedBox(width: 70),
-                  Container(
+                  SizedBox(
                       height: 40,
                       width: 40,
                       child: ClipRect(
@@ -37,7 +44,7 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            //SizedBox(height: 20),
             Row(
               children: [
                 Expanded(
@@ -59,7 +66,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ),
                 SizedBox(width: 15),
-                Container(
+                SizedBox(
                   height: 50,
                   width: 50,
                   child: ElevatedButton(
@@ -75,260 +82,293 @@ class _HomepageState extends State<Homepage> {
                 )
               ],
             ),
-            SizedBox(height: 20),
+            // SizedBox(height: 20),
             Container(
               height: 150,
+              width: 400,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'LEARN AND IMPLEMENT QBASIC',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w700),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          Text('On the go!',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue[900],
+                                  fontSize: 33)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                      width: 180,
+                      child: Image.asset(
+                        'image/book.jpeg',
+                      )),
+                ],
+              ),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white),
             ),
-            SizedBox(height: 20),
+            //SizedBox(height: 20),
             Text(
               'Code of the day',
-              style: TextStyle(color: Color.fromARGB(255, 35, 102, 183)),
+              style: TextStyle(color: Color.fromARGB(255, 0, 115, 255)),
             ),
-            SizedBox(height: 10),
+            //SizedBox(height: 10),
             Container(
-              height: 100,
-              //child: Text('Write a program to display volume of sphere'),
+              height: 110,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Write a program to display volume of sphere.',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.w500)),
+                            SizedBox(height: 20),
+                            Text('Read more >>',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.blue[900]))
+                          ],
+                        ),
+                      ),
+                      Stack(
+                        alignment: Alignment.topRight,
+                        children: [
+                          Image.asset('image/computer.jpeg'),
+                          Positioned(
+                            top: 0,
+                            right: 0,
+                            child: Icon(Icons.close),
+                          ),
+                        ],
+                      ),
+                    ]),
+              ),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white),
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
-            SizedBox(height: 20),
+            //SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Icon(
-                          Icons.person_outline_outlined,
-                          color: Colors.red,
-                        ),
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(Colors.white),
-                          shape: MaterialStatePropertyAll(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Text('PDF'),
-                  ],
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          child: Icon(
-                            Icons.people_alt_outlined,
-                            color: Color.fromARGB(255, 61, 172, 65),
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.white),
-                            shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          )),
-                    ),
-                    Text('Groups'),
-                  ],
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Icon(Icons.nearby_error, color: Colors.blue),
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(Colors.white),
-                          shape: MaterialStatePropertyAll(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Text('Near by'),
-                  ],
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          child: Icon(
-                            Icons.connect_without_contact_outlined,
-                            color: Colors.orange,
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.white),
-                            shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          )),
-                    ),
-                    Text('Discussion'),
-                  ],
-                ),
-                SizedBox(width: 10),
-                Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          child: Icon(
-                            Icons.note_add_outlined,
-                            color: Colors.yellow,
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.white),
-                            shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          )),
-                    ),
-                    Text('To do List'),
-                  ],
-                ),
+                IconButtons(
+                    icons: Icons.person_outline_outlined,
+                    IconColor: Colors.red,
+                    label: 'PDF'),
+                SizedBox(width: 25),
+                IconButtons(
+                    icons: Icons.people_alt_outlined,
+                    IconColor: Colors.green,
+                    label: 'Groups'),
+                SizedBox(width: 25),
+                IconButtons(
+                    icons: Icons.nearby_error,
+                    IconColor: Colors.blue,
+                    label: 'Near by'),
+                SizedBox(width: 25),
+                IconButtons(
+                    icons: Icons.connect_without_contact_outlined,
+                    IconColor: Colors.orange,
+                    label: 'Discussion'),
+                SizedBox(width: 25),
+                IconButtons(
+                    icons: Icons.note_add_outlined,
+                    IconColor: Colors.yellow,
+                    label: 'To do List')
               ],
             ),
-            SizedBox(height: 20),
-            Card(
-              elevation: 5,
-              child: Container(
-                height: 300,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
+            //SizedBox(height: 20),
+            CardContainer(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10.0, left: 20),
-                      child: Row(
-                        //mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Card(
-                            elevation: 5,
-                            child: Container(
-                              height: 100,
-                              width: 80,
-                              child: Column(
-                                children: [
-                                  Icon(Icons.abc),
-                                  Divider(
-                                    color: Colors.black,
-                                    thickness: 1,
-                                  ),
-                                  Text('Learn Now')
-                                ],
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(color: Colors.white),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 40),
-                          Card(
-                            elevation: 5,
-                            child: Container(
-                              height: 100,
-                              width: 80,
-                              child: Column(
-                                children: [
-                                  Icon(Icons.code),
-                                  Divider(
-                                    color: Colors.black,
-                                    thickness: 1,
-                                  ),
-                                  Text('Basic Programming')
-                                ],
-                              ),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(color: Colors.white),
-                                  borderRadius: BorderRadius.circular(10)),
-                            ),
-                          ),
-                          SizedBox(width: 40),
-                          Card(
-                            elevation: 5,
-                            child: Container(
-                              height: 100,
-                              width: 80,
-                              child: Column(
-                                children: [
-                                  Icon(
-                                    Icons.pattern,
-                                    size: 40,
-                                    color: Colors.blue,
-                                  ),
-                                  Divider(
-                                    color: Color.fromARGB(255, 39, 39, 39),
-                                    thickness: 1,
-                                  ),
-                                  Text('Basic Programming')
-                                ],
-                              ),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(color: Colors.white),
-                                  borderRadius: BorderRadius.circular(10)),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CardItem(
+                            icon: Icons.psychology_alt_outlined,
+                            iconcolor: Colors.blue,
+                            iconsize: 40,
+                            text: 'Learn Now'),
+                        SizedBox(width: 30),
+                        CardItem(
+                          icon: Icons.terminal_outlined,
+                          text: 'Basic Programming',
+                          iconcolor: Colors.blue,
+                          iconsize: 40,
+                        ),
+                        SizedBox(width: 30),
+                        CardItem(
+                            icon: Icons.pattern,
+                            text: 'Basic Programming',
+                            iconsize: 40,
+                            iconcolor: Colors.blue),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CardItem(
+                            icon: Icons.folder_copy_outlined,
+                            iconsize: 40,
+                            iconcolor: Colors.blue,
+                            text: 'File Handling'),
+                        SizedBox(width: 30),
+                        CardItem(
+                            icon: Icons.integration_instructions_outlined,
+                            iconsize: 40,
+                            iconcolor: Colors.blue,
+                            text: 'Basic Programming'),
+                        SizedBox(width: 30),
+                        CardItem(
+                            icon: Icons.sports_esports_outlined,
+                            text: 'Basic Programming',
+                            iconsize: 40,
+                            iconcolor: Colors.blue),
+                      ],
+                    ),
                   ],
-                ),
-              ),
+                )
+              ],
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class IconButtons extends StatelessWidget {
+  final IconData icons;
+  final Color IconColor;
+  final String label;
+  const IconButtons(
+      {required this.icons, required this.IconColor, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          height: 50,
+          width: 50,
+          child: ElevatedButton(
+            onPressed: () {},
+            child: Icon(icons, color: IconColor, size: 30),
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(Colors.white),
+              shape: MaterialStatePropertyAll(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Text(label),
+      ],
+    );
+  }
+}
+
+class CardContainer extends StatelessWidget {
+  final List<Widget> children;
+  const CardContainer({Key? key, required this.children}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        elevation: 5,
+        child: Container(
+          height: 290,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: children,
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+}
+
+class CardItem extends StatelessWidget {
+  final IconData icon;
+  final double iconsize;
+  final Color iconcolor;
+  final String text;
+
+  const CardItem({
+    Key? key,
+    required this.icon,
+    required this.text,
+    this.iconsize = 24,
+    this.iconcolor = Colors.black,
+  }) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5,
+      child: Container(
+        height: 100,
+        width: 80,
+        child: Column(
+          children: [
+            Icon(
+              icon,
+              size: iconsize,
+              color: iconcolor,
+            ),
+            Divider(
+              color: Color.fromARGB(255, 39, 39, 39),
+              thickness: 1,
+            ),
+            Text(
+              text,
+            ),
+          ],
+        ),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(10)),
       ),
     );
   }
